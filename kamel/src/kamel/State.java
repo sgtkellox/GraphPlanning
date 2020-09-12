@@ -1,6 +1,5 @@
 package kamel;
 
-import java.util.HashMap;
 
 public class State {
 	
@@ -9,7 +8,10 @@ public class State {
 	}
 
 	public void setFlourDistribution(int[] flourDistribution) {
-		this.flourDistribution = flourDistribution;
+		//this.flourDistribution = flourDistribution;
+		for(int i = 0; i < flourDistribution.length; i++) {
+			this.flourDistribution[i] = flourDistribution[i];
+		}
 	}
 
 	public int getKamelIndex() {
@@ -28,10 +30,10 @@ public class State {
 		this.kamelLoad = kamelLoad;
 	}
 	
-	private HashMap<State, String> vorganger = new HashMap<State, String>();
-	private HashMap<State, String> nachfolger = new HashMap<State, String>();
+	private MyHashMap vorganger = new MyHashMap();
+	private MyHashMap nachfolger = new MyHashMap();
 
-	private int[] flourDistribution = new int[30];
+	private int[] flourDistribution = new int[31];	//für 30 steps
 	
 	private int kamelIndex = 0;
 	
@@ -41,19 +43,19 @@ public class State {
 		
 	}
 
-	public HashMap<State, String> getNachfolger() {
+	public MyHashMap getNachfolger() {
 		return nachfolger;
 	}
 
-	public void setNachfolger(HashMap<State, String> nachfolger) {
+	public void setNachfolger(MyHashMap nachfolger) {
 		this.nachfolger = nachfolger;
 	}
 
-	public HashMap<State, String> getVorganger() {
+	public MyHashMap getVorganger() {
 		return vorganger;
 	}
 
-	public void setVorganger(HashMap<State, String> vorganger) {
+	public void setVorganger(MyHashMap vorganger) {
 		this.vorganger = vorganger;
 	}
 	
