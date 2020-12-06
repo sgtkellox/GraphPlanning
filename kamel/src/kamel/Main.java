@@ -7,7 +7,7 @@ public class Main {
 		startState.getFlourDistribution()[0] = 90;
 		
 		TreeBuilder treeBuilder = new TreeBuilder();
-		treeBuilder.builtTree(startState);
+		treeBuilder.builtTree(startState,0);
 		System.out.println(treeBuilder.states.size());
 	}
 
